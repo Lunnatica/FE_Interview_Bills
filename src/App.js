@@ -33,7 +33,6 @@ class App extends Component {
   }
 
   getDataFromAPI(url) {
-    console.log("hola")
     return fetch(url)
           .then(res => res.json())   
   }
@@ -59,7 +58,7 @@ class App extends Component {
   render() {
     return (
      <>
-       <NavBar callback={this.chooseTab}/>
+       <NavBar className="navBar" callback={this.chooseTab}/>
        {this.state.isLoaded ? 
           <Tab title={this.state.currentTab} data={this.getCurrentTabData()} categories={this.state.categories}/> 
           : <Loader/>

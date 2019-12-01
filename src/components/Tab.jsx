@@ -3,7 +3,7 @@ import Bill from "./Bill"
 
 function Tab(props) {
     return (
-        <div class="billsList">
+        <div className="billsList">
             {props.data.map(item => {
                     const category = props.categories.filter(category => category.id === item.categoryId)
                     return (
