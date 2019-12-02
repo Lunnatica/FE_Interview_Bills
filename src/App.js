@@ -50,6 +50,24 @@ class App extends Component {
     })   
   }
 
+  removeBill(id) {
+    // remove bill from bills list and adding it to potential bills
+    const billToRemove = this.state.filter(item => item.id === id)
+    const newBillsList = this.state.filter(item => item.id !== id)
+    fetch("http://localhost:3000/bills/:" + id,
+        {
+        method: "PATCH",
+        body: JSON.stringify(billToRemove),
+        headers: {'Content-type': 'application/json; charset=UTF-8'}
+        }
+      ).then(response => response.json())
+       .then(json => console.log(json))
+}
+
+addAsBill(id) {
+    alert(id)
+}
+
   
   componentDidMount() {
     this.getBillsData()
@@ -58,9 +76,17 @@ class App extends Component {
   render() {
     return (
      <>
-       <NavBar className="navBar" callback={this.chooseTab}/>
        {this.state.isLoaded ? 
-          <Tab title={this.state.currentTab} data={this.getCurrentTabData()} categories={this.state.categories}/> 
+          <>
+            <NavBar className="navBar" callback={this.chooseTab}/>
+            <Tab 
+                title={this.state.currentTab} 
+                data={this.getCurrentTabData()} 
+                categories={this.state.categories}
+                removeBillCallback={this.removeBill}
+                addAsBillCallback={this.addAsBill}
+            /> 
+          </>
           : <Loader/>
        }
        <Footer />

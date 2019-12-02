@@ -7,8 +7,7 @@ function TransactionTable(props) {
             <tbody>
                 {props.transactions.map(item => 
                     <Transaction key={item.id}
-                    amount={item.amount}
-                    date={item.date} />
+                    {...item}/>
                     )
                 } 
             </tbody>      

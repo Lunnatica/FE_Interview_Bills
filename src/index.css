@@ -6,6 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/***** Icons *****/
 .billIcon {
   width: 50px;
   height: 50px;
@@ -16,12 +17,14 @@ body {
   height: 50px;
 }
 
+/***** Bill *****/
 .billHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+/***** NavBar *****/
 #topBar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,5 +36,18 @@ body {
   width: 50px;
   height: 50px;
   margin-right: 10px;
+}
+
+/***** Footer *****/
+#footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+#footer > img {
+  width: 25px;
+  height: 25px;
 }
 /*# sourceMappingURL=index.css.map */

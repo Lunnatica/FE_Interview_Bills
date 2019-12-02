@@ -1,10 +1,14 @@
 import React from "react"
-import welcomeIcon from '.././assets/welcome.jpg';
+import cleoIcon from '.././assets/cleo_coin.jpg';
+
 
 
 function Footer() {
     return (
-      <img src={welcomeIcon} alt="Welcome!"/>
+        <div id="footer">
+            <h3>Created for the Cleo interview</h3>
+            <img src={cleoIcon} alt="Cleo icon"/>
+        </div>
     )
 }
 

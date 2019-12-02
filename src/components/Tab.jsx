@@ -8,15 +8,13 @@ function Tab(props) {
                     const category = props.categories.filter(category => category.id === item.categoryId)
                     return (
                         <Bill key={item.id} 
-                        iconUrl={item.iconUrl}
                         category={category}
-                        name={item.name}
-                        transactions={item.transactions} 
+                        removeBillCallback={props.removeBillCallback}
+                        addAsBillCallback={props.addAsBillCallback}
+                        {...item}
                         />
                     )
-                
-            }
-            )
+                })
             }
         </div>
     )
