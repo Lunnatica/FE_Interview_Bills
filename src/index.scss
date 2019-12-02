@@ -8,6 +8,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+
 /***** Icons *****/
 
 .billIcon {
@@ -30,7 +38,11 @@ body {
 
 #topBar {
   display: flex;
-  padding: 2%;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  background: orange;
 }
 
 #topBar > img {
@@ -49,3 +61,40 @@ body {
   width:25px;
   height:25px
 }
+
+
+#navigation {
+  display: flex;
+  background: orange;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: stretch;
+}
+
+$disactive-button-color: #e6a62e;
+$active-button-color: #4d00ff;
+
+@mixin button($color){
+  border: solid;
+  border-width: 1px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: $color;
+}
+
+.navigationButtonActive {
+  @include button($active-button-color);
+}
+
+.navigationButtonDisactive {
+  @include button($disactive-button-color);
+}
+

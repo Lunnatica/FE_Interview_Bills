@@ -6,6 +6,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+
 /***** Icons *****/
 .billIcon {
   width: 50px;
@@ -29,7 +47,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 2%;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10px;
+  background: orange;
 }
 
 #topBar > img {
@@ -49,5 +76,53 @@ body {
 #footer > img {
   width: 25px;
   height: 25px;
+}
+
+#navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: orange;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+
+.navigationButtonActive {
+  border: solid;
+  border-width: 1px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #4d00ff;
+}
+
+.navigationButtonDisactive {
+  border: solid;
+  border-width: 1px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #e6a62e;
 }
 /*# sourceMappingURL=index.css.map */

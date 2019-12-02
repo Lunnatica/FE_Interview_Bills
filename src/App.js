@@ -120,7 +120,7 @@ addAsBill(id) {
      <>
        {this.state.isLoaded ? 
           <>
-            <NavBar className="navBar" callback={this.chooseTab}/>
+            <NavBar className="navBar" callback={this.chooseTab} currentTab={this.state.currentTab}/>
             <Tab 
                 title={this.state.currentTab} 
                 data={this.getCurrentTabData()} 
