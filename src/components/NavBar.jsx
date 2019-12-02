@@ -1,5 +1,5 @@
 import React from 'react'
-import welcomeIcon from '.././assets/welcome.jpg';
+import icon from '.././assets/cleo_coin.jpg';
 
 
 function NavBar(props) {
@@ -9,7 +9,7 @@ function NavBar(props) {
     return (
         <>
             <div id="topBar">
-                    <img src={welcomeIcon} alt="Welcome!"/>
+                    <img src={icon} alt="Cleo coin logo!"/>
                     <h1>CleoP</h1>
                 </div>
             <div id="navigation">

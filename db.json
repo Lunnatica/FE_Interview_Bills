@@ -4,7 +4,7 @@
       "categoryId": 1,
       "iconUrl": "http://assets.vodafone.co.uk/cs/groups/configfiles/documents/document/vf-logo-large.png",
       "id": "5a5caa1efe33900100fd8ed5",
-      "isBill": true,
+      "isBill": false,
       "name": "Vodafone",
       "transactions": [
         {
@@ -208,7 +208,7 @@
       "categoryId": 4,
       "iconUrl": "http://arma.uk.net/wp-content/uploads/2017/05/TFL-logo-square.png",
       "id": "5a5cabd4fe33900100fd8edb",
-      "isBill": false,
+      "isBill": true,
       "name": "TFL",
       "transactions": [
         {
@@ -242,7 +242,7 @@
       "categoryId": 5,
       "iconUrl": "https://www.manorwalks.co.uk/media/1065/sainsburys.png",
       "id": "5a5cac65fe33900100fd8edc",
-      "isBill": false,
+      "isBill": true,
       "name": "Sainsbury's",
       "transactions": [
         {
@@ -276,7 +276,7 @@
       "categoryId": 4,
       "iconUrl": "https://pbs.twimg.com/profile_images/1045783102000230400/TPLLaqYR.jpg",
       "id": "328card4fe33900100fd8ail",
-      "isBill": false,
+      "isBill": true,
       "name": "Uber",
       "transactions": [
         {

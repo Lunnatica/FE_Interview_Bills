@@ -1,3 +1,4 @@
+/***** Variables ******/
 body {
   margin: 0;
   padding: 0;
@@ -14,14 +15,19 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  height: 100vh;
+}
+
+.mainTab {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 /***** Icons *****/
@@ -44,48 +50,11 @@ body {
 
 /***** NavBar *****/
 #topBar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 10px;
-  background: orange;
-}
-
-#topBar > img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-/***** Footer *****/
-#footer {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
-}
-
-#footer > img {
-  width: 25px;
-  height: 25px;
-}
-
-#navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: orange;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -96,6 +65,67 @@ body {
           justify-content: center;
   -ms-flex-item-align: stretch;
       align-self: stretch;
+  padding-top: 10px;
+  background: blue;
+  color: white;
+}
+
+#topBar > img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/***** Footer *****/
+#footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background: orange;
+  margin-top: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#footer > img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+#navigation {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  background: orange;
 }
 
 .navigationButtonActive {

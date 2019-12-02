@@ -121,17 +121,17 @@ addAsBill(id) {
        {this.state.isLoaded ? 
           <>
             <NavBar className="navBar" callback={this.chooseTab} currentTab={this.state.currentTab}/>
-            <Tab 
+            <Tab className="mainTab"
                 title={this.state.currentTab} 
                 data={this.getCurrentTabData()} 
                 categories={this.state.categories}
                 removeBillCallback={this.removeBill}
                 addAsBillCallback={this.addAsBill}
             /> 
+            <Footer />
           </>
           : <Loader/>
        }
-       <Footer />
     </>
     );
   }
