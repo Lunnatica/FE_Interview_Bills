@@ -4,7 +4,7 @@
       "categoryId": 1,
       "iconUrl": "http://assets.vodafone.co.uk/cs/groups/configfiles/documents/document/vf-logo-large.png",
       "id": "5a5caa1efe33900100fd8ed5",
-      "isBill": false,
+      "isBill": true,
       "name": "Vodafone",
       "transactions": [
         {
@@ -242,7 +242,7 @@
       "categoryId": 5,
       "iconUrl": "https://www.manorwalks.co.uk/media/1065/sainsburys.png",
       "id": "5a5cac65fe33900100fd8edc",
-      "isBill": true,
+      "isBill": false,
       "name": "Sainsbury's",
       "transactions": [
         {

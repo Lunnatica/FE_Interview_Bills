@@ -19,14 +19,13 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  
   align-items: center;
   justify-content: stretch;
   height: 100vh;
 }
 
-.mainTab {
-  flex: 1 0 auto;
+.billsList {
+  flex: 2 0 auto;
 }
 
 /***** Icons *****/
