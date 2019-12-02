@@ -19,6 +19,8 @@ class App extends Component {
       isLoaded: false
     }
     this.chooseTab = this.chooseTab.bind(this)
+    this.removeBill = this.removeBill.bind(this)
+    this.addAsBill = this.addAsBill.bind(this)
   }
   
   chooseTab(tab) {
@@ -52,20 +54,60 @@ class App extends Component {
 
   removeBill(id) {
     // remove bill from bills list and adding it to potential bills
-    const billToRemove = this.state.filter(item => item.id === id)
-    const newBillsList = this.state.filter(item => item.id !== id)
-    fetch("http://localhost:3000/bills/:" + id,
+    fetch("http://localhost:3002/bills/" + id,
         {
         method: "PATCH",
-        body: JSON.stringify(billToRemove),
+        body: JSON.stringify({isBill:false}),
         headers: {'Content-type': 'application/json; charset=UTF-8'}
         }
-      ).then(response => response.json())
-       .then(json => console.log(json))
+      ).then(response => {
+        // update bills and potential bills lists
+        let billToRemove = this.state.bills.find(item => item.id === id)
+        billToRemove.isBill = false
+
+        // update potentialBills list by adding the removed bill
+        let newPotentialBillsList = [...this.state.potentialBills]
+        newPotentialBillsList.push(billToRemove)
+
+        // update billsLists by filtering out the removed bill 
+        const newBillsList = this.state.bills.filter(item => item.id !== id)
+        
+        this.setState({
+          bills: newBillsList,
+          potentialBills: newPotentialBillsList
+        })
+      }   
+      ).catch(response => alert(response,"There was an error with your request - please try again")) // possibly show a warning component in the page instead
+       
 }
 
 addAsBill(id) {
-    alert(id)
+  // remove bill from bills list and adding it to potential bills
+  fetch("http://localhost:3002/bills/" + id,
+      {
+      method: "PATCH",
+      body: JSON.stringify({isBill:true}),
+      headers: {'Content-type': 'application/json; charset=UTF-8'}
+      }
+    ).then(response => {
+      // update bills and potential bills lists
+      let billToRemove = this.state.potentialBills.find(item => item.id === id)
+      billToRemove.isBill = true
+
+      // update potentialBills list by adding the removed bill
+      let newBillsList = [...this.state.bills]
+      newBillsList.push(billToRemove)
+
+      // update billsLists by filtering out the removed bill 
+      const newPotentialBillsList = this.state.potentialBills.filter(item => item.id !== id)
+      
+      this.setState({
+        bills: newBillsList,
+        potentialBills: newPotentialBillsList
+      })
+    }   
+    ).catch(response => alert(response,"There was an error with your request - please try again")) // possibly show a warning component in the page instead
+     
 }
 
   
