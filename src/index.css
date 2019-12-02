@@ -25,27 +25,45 @@ body {
 }
 
 .billsList {
-  -webkit-box-flex: 2;
-      -ms-flex: 2 0 auto;
-          flex: 2 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding: 1em;
 }
 
 /***** Icons *****/
 .billIcon {
-  width: 50px;
-  height: 50px;
+  border-radius: 50%;
+  width: 100%;
+  max-width: 3em;
+  max-height: 3em;
 }
 
 .categoryIcon {
-  width: 50px;
-  height: 50px;
+  border-radius: 50%;
+  width: 100%;
+  max-width: 3em;
+  max-height: 3em;
+  max-width: 2em;
+  max-height: 2em;
+  margin-left: 1em;
 }
 
 /***** Bill *****/
+.billDiv {
+  background-color: #e6a62e;
+  border-radius: 2%;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
 .billHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /***** NavBar *****/
@@ -68,12 +86,13 @@ body {
   padding-top: 10px;
   background: blue;
   color: white;
+  font-weight: bold;
 }
 
 #topBar > img {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  margin-right: 0.5em;
 }
 
 /***** Footer *****/
@@ -105,7 +124,6 @@ body {
 #footer > img {
   width: 25px;
   height: 25px;
-  margin-left: 10px;
   margin-bottom: 20px;
 }
 
@@ -126,33 +144,103 @@ body {
   -ms-flex-item-align: stretch;
       align-self: stretch;
   background: orange;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
 }
 
+/***** Buttons *****/
 .navigationButtonActive {
   border: solid;
   border-width: 1px;
   color: white;
-  padding: 15px 32px;
+  padding: 1em 2em;
   text-align: center;
-  display: inline-block;
   border-radius: 8px;
-  font-size: 14px;
-  margin: 4px 2px;
+  font-size: 1em;
+  margin: 0.4em 0.2em;
   cursor: pointer;
   background-color: #4d00ff;
+  font-weight: bold;
+}
+
+.navigationButtonActive:hover {
+  background-color: #26017e;
 }
 
 .navigationButtonDisactive {
   border: solid;
   border-width: 1px;
   color: white;
-  padding: 15px 32px;
+  padding: 1em 2em;
   text-align: center;
-  display: inline-block;
   border-radius: 8px;
-  font-size: 14px;
-  margin: 4px 2px;
+  font-size: 1em;
+  margin: 0.4em 0.2em;
   cursor: pointer;
   background-color: #e6a62e;
+  font-weight: bold;
+}
+
+.navigationButtonDisactive:hover {
+  background-color: #ad7306;
+}
+
+.showTransactionsButton {
+  border: solid;
+  border-width: 1px;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1em;
+  margin: 0.4em 0.2em;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  color: black;
+  padding: 0.4em 0.8em;
+  width: 100%;
+  border: 1px solid white;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.showTransactionsButton:hover {
+  background-color: gray;
+}
+
+.removeBillButton, .addAsBillButton {
+  border: solid;
+  border-width: 1px;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1em;
+  margin: 0.4em 0.2em;
+  cursor: pointer;
+  background-color: #dd2727;
+  padding: 0.5em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.removeBillButton:hover, .addAsBillButton:hover {
+  background-color: #8b0909;
+}
+
+/***** Transactions area ******/
+.transactionsTable {
+  border: 2px solid #ad7306;
+  background-color: #e6a62e;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
 }
 /*# sourceMappingURL=index.css.map */

@@ -3,6 +3,8 @@
 $nav-color:orange;
 $disactive-button-color: #e6a62e;
 $active-button-color: #4d00ff;
+$disactive-button-color-hover: #ad7306;
+$active-button-color-hover: #26017e;
 
 
 body {
@@ -25,25 +27,42 @@ body {
 }
 
 .billsList {
-  flex: 2 0 auto;
+  flex: 1 0 auto;
+  padding: 1em;
 }
 
 /***** Icons *****/
 
+@mixin icon() {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 3em;
+  max-height: 3em;
+}
+
 .billIcon {
-  width:50px;
-  height:50px
+  @include icon
 }
 
 .categoryIcon {
-  width:50px;
-  height:50px
+  @include icon;
+  max-width: 2em;
+  max-height: 2em;
+  margin-left: 1em;
 }
 
 /***** Bill *****/
 
+.billDiv {
+  background-color: $disactive-button-color;
+  border-radius: 2%;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
 .billHeader {
-  display:flex
+  display:flex;
+  justify-content: space-between;
 }
 
 /***** NavBar *****/
@@ -61,13 +80,14 @@ body {
   @include centeredBar();
   padding-top: 10px;
   background:blue;
-  color: white
+  color: white;
+  font-weight: bold;
 }
 
 #topBar > img {
   width:50px;
   height:50px;
-  margin-right: 10px
+  margin-right: 0.5em
 }
 
 /***** Footer *****/
@@ -84,40 +104,71 @@ body {
 #footer > img {
   width:25px;
   height:25px;
-  margin-left: 10px;
   margin-bottom: 20px;
 }
-
-
-
-
 
 #navigation {
   @include centeredBar();
   background: orange;
+  flex-basis: auto;
 }
 
+/***** Buttons *****/
 
-
-@mixin button($color){
+@mixin button($color, $hoverColor){
   border: solid;
   border-width: 1px;
   color: white;
-  padding: 15px 32px;
+  padding: 1em 2em;;
   text-align: center;
-  display: inline-block;
   border-radius: 8px;
-  font-size: 14px;
-  margin: 4px 2px;
+  font-size: 1em;
+  margin: 0.4em 0.2em;
   cursor: pointer;
   background-color: $color;
+  &:hover{
+    background-color: $hoverColor
+  }
 }
 
 .navigationButtonActive {
-  @include button($active-button-color);
+  @include button($active-button-color,$active-button-color-hover);
+  font-weight: bold;
 }
+
 
 .navigationButtonDisactive {
-  @include button($disactive-button-color);
+  @include button($disactive-button-color,$disactive-button-color-hover);
+  font-weight: bold;
 }
 
+
+.showTransactionsButton {
+  @include button(#e7e7e7,gray);
+  color:black;
+  padding:0.4em 0.8em;
+  width: 100%;
+  border: 1px solid white;
+  display: inline-flex;
+  align-items: center; 
+  justify-content: space-around;
+}
+
+
+.removeBillButton, .addAsBillButton {
+  @include button(#dd2727,rgb(139, 9, 9));
+  padding:0.5em;
+  height: fit-content;
+}
+
+/***** Transactions area ******/
+.transactionsTable {
+  border: 2px solid $disactive-button-color-hover;
+  background-color:$disactive-button-color;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  .tr {
+
+  }
+}

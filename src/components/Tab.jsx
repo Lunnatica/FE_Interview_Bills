@@ -18,7 +18,7 @@ function Tab(props) {
                     })
                 }
             </div>) :
-            <p>There are no bills!</p>
+            <h1>💵 There are no bills! 💵</h1>
     )
 }
 

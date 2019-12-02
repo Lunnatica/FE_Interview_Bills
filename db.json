@@ -38,7 +38,7 @@
       "categoryId": 2,
       "iconUrl": "https://claytonsquare.co.uk/wp-content/uploads/2018/01/sky-logo.jpg",
       "id": "5a5caa8efe33900100fd8ed6",
-      "isBill": false,
+      "isBill": true,
       "name": "Sky TV",
       "transactions": [
         {
@@ -208,7 +208,7 @@
       "categoryId": 4,
       "iconUrl": "http://arma.uk.net/wp-content/uploads/2017/05/TFL-logo-square.png",
       "id": "5a5cabd4fe33900100fd8edb",
-      "isBill": true,
+      "isBill": false,
       "name": "TFL",
       "transactions": [
         {
@@ -276,7 +276,7 @@
       "categoryId": 4,
       "iconUrl": "https://pbs.twimg.com/profile_images/1045783102000230400/TPLLaqYR.jpg",
       "id": "328card4fe33900100fd8ail",
-      "isBill": true,
+      "isBill": false,
       "name": "Uber",
       "transactions": [
         {

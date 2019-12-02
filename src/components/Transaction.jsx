@@ -7,7 +7,7 @@ function Transaction(props) {
 
     return (
         <tr id={props.id} className="transactionRow">
-            <td className="transactionDate">{dayjs(props.date).format('D-MM-YY')}</td>
+            <td className="transactionDate">{dayjs(props.date).format('DD-MM-YY')}</td>
             <td className="transactionAmount">£{props.amount}</td>
         </tr>
     )

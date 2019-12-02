@@ -4,6 +4,8 @@ import TransactionsTable from "./TransactionsTable"
 
 function Bill(props) {
     const [visibility, setVisibility] = useState(false)
+    const totalMoneyTransactions = props.transactions.reduce((acc,item) => acc + item.amount,0)
+    const transactionsButtonText =  `Show ${props.transactions.length} transactions (Total: £${totalMoneyTransactions})`
     return (
             <div className="billDiv" id={props.id}>
                 <div className="billHeader">
@@ -12,14 +14,17 @@ function Bill(props) {
                         null
                     }
                     <h1>{props.name} </h1>
-                    (<img className="categoryIcon" src={props.category[0].iconUrl} alt={props.category[0].name}/>)
                     {props.isBill ? 
-                        <button onClick={() => props.removeBillCallback(props.id)}>Remove bill</button> : 
-                        <button onClick={() => props.addAsBillCallback(props.id)}>Add as bill</button>
+                        <button className="removeBillButton" onClick={() => props.removeBillCallback(props.id)}>Remove bill</button> : 
+                        <button className="addAsBillButton" onClick={() => props.addAsBillCallback(props.id)}>Add as bill</button>
                     }
                 </div>
-                <button onClick={() => setVisibility(!visibility)}>{`${props.transactions.length} transactions`}</button>
-                {visibility ? <TransactionsTable className="transactionsTable" transactions = {props.transactions}/> : null}
+                <div className="transactionsArea">
+                    <button className="showTransactionsButton" onClick={() => setVisibility(!visibility)}>
+                        {transactionsButtonText}<img className="categoryIcon" src={props.category[0].iconUrl} alt={props.category[0].name}/>
+                    </button>
+                    {visibility ? <TransactionsTable  transactions = {props.transactions}/> : null}
+                </div>
             </div>  
     )
 }
