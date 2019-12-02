@@ -52,58 +52,55 @@ class App extends Component {
     })   
   }
 
+
+  patchData(id, isBill) {
+    return fetch("http://localhost:3002/bills/" + id,
+          {
+          method: "PATCH",
+          body: JSON.stringify({ isBill }),
+          headers: {'Content-type': 'application/json; charset=UTF-8'}
+          }
+        )
+  }
+
+  moveElement(id, isBill, arrayFrom,arrayTo) {
+    // find element to move
+    let element = arrayFrom.find(item => item.id === id)
+    element.isBill = isBill
+  
+    // move element to new array
+    let updatedArrayTo = [...arrayTo]
+    updatedArrayTo.push(element)
+  
+    // filter out element from old array
+    const updateArrayFrom = arrayFrom.filter(item => item.id !== id)
+    return {
+      updatedArrayTo,
+      updateArrayFrom
+    }
+  }
+
   removeBill(id) {
     // remove bill from bills list and adding it to potential bills
-    fetch("http://localhost:3002/bills/" + id,
-        {
-        method: "PATCH",
-        body: JSON.stringify({isBill:false}),
-        headers: {'Content-type': 'application/json; charset=UTF-8'}
-        }
-      ).then(response => {
-        // update bills and potential bills lists
-        let billToRemove = this.state.bills.find(item => item.id === id)
-        billToRemove.isBill = false
-
-        // update potentialBills list by adding the removed bill
-        let newPotentialBillsList = [...this.state.potentialBills]
-        newPotentialBillsList.push(billToRemove)
-
-        // update billsLists by filtering out the removed bill 
-        const newBillsList = this.state.bills.filter(item => item.id !== id)
-        
+    this.patchData(id,false).then(response => {
+        const updatedLists = this.moveElement(id, false, this.state.bills, this.state.potentialBills)
         this.setState({
-          bills: newBillsList,
-          potentialBills: newPotentialBillsList
+          bills:  updatedLists.updateArrayFrom,
+          potentialBills: updatedLists.updatedArrayTo
         })
       }   
       ).catch(response => alert(response,"There was an error with your request - please try again")) // possibly show a warning component in the page instead
        
-}
+  }
 
 addAsBill(id) {
   // remove bill from bills list and adding it to potential bills
-  fetch("http://localhost:3002/bills/" + id,
-      {
-      method: "PATCH",
-      body: JSON.stringify({isBill:true}),
-      headers: {'Content-type': 'application/json; charset=UTF-8'}
-      }
-    ).then(response => {
-      // update bills and potential bills lists
-      let billToRemove = this.state.potentialBills.find(item => item.id === id)
-      billToRemove.isBill = true
+  this.patchData(id,true).then(response => {
+      const updatedLists = this.moveElement(id, true, this.state.potentialBills, this.state.bills)
 
-      // update potentialBills list by adding the removed bill
-      let newBillsList = [...this.state.bills]
-      newBillsList.push(billToRemove)
-
-      // update billsLists by filtering out the removed bill 
-      const newPotentialBillsList = this.state.potentialBills.filter(item => item.id !== id)
-      
       this.setState({
-        bills: newBillsList,
-        potentialBills: newPotentialBillsList
+        bills: updatedLists.updatedArrayTo,
+        potentialBills: updatedLists.updateArrayFrom
       })
     }   
     ).catch(response => alert(response,"There was an error with your request - please try again")) // possibly show a warning component in the page instead

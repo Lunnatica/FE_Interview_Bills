@@ -106,7 +106,7 @@
       "categoryId": 2,
       "iconUrl": "https://rosenfeldmedia.com/designopssummit2018/wp-content/uploads/sites/10/2018/09/netflix-logo-square.png",
       "id": "5a5cab18fe33900100fd8ed8",
-      "isBill": false,
+      "isBill": true,
       "name": "Netflix",
       "transactions": [
         {
