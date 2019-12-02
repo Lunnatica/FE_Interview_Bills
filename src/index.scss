@@ -168,7 +168,8 @@ body {
   width: 100%;
   text-align: center;
   border-collapse: collapse;
-  .tr {
-
+  td,th {
+    border: 1px solid $active-button-color;
+    padding: 3px 2px;
   }
 }

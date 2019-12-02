@@ -243,4 +243,9 @@ body {
   text-align: center;
   border-collapse: collapse;
 }
+
+.transactionsTable td, .transactionsTable th {
+  border: 1px solid #4d00ff;
+  padding: 3px 2px;
+}
 /*# sourceMappingURL=index.css.map */
