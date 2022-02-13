@@ -1,4 +1,14 @@
 ## Bills management page
+
+### Screenshots
+
+<img width="1440" alt="BillsManagement" src="https://user-images.githubusercontent.com/4697967/153757228-bc071bd3-ecb2-431f-8451-519127ff3cb8.png">
+
+
+
+<img width="1440" alt="Screenshot 2022-02-13 at 14 12 37" src="https://user-images.githubusercontent.com/4697967/153757236-fa8eaa31-36a6-4a15-9f12-a4f2eaf4bc34.png">
+
+
 ### Get Started
 1. Fork or clone this repo (a simple [`create-react-app`](https://github.com/facebook/create-react-app) extended with [`json-server`](https://github.com/typicode/json-server) and some specific goodies)
 1. Install dependencies via `yarn` (or `npm`)
