@@ -5,7 +5,7 @@
 1. Run `yarn start` to start the dev server
 1. Run `yarn api` in a different terminal to start the json-api server
 
-### The Task
+### The Functionality
 1. Create a Tabs component that allows multiple pages to be switched between.
 1. One tab should show a list of bills. These can be found at http://localhost:3002/bills/. Bills have a flag `isBill` set to `true`.
 1. Another tab should show a list of transactions which are potential bills. These can also be found at http://localhost:3000/bills/. Potential bills have a flag `isBill` set to `false`.
@@ -15,8 +15,3 @@
 1. Add an action to the potential bills tab for each potential bill called "Add as bill" which updates the relevant bill's `isBill` flag to `true`.
 1. After each action, the lists should reflect the changes.
 
-### Notes
-- Please aim to spend 2-3 hours completing this task
-- Feel free to use state management tools, and think about how the application might be testable
-- Style the components however you see fit, SASS, PostCSS or maybe even CSS in JS
-- The API contains other data, feel free to use this creatively if you have the time
